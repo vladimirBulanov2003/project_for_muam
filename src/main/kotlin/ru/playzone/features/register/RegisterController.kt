@@ -36,6 +36,7 @@ class RegisterController(private val call: ApplicationCall) {
                     )
                 )
             } catch (e: ExposedSQLException) {
+
                 call.respond(HttpStatusCode.Conflict, "User already exists")
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest, "Can't create user ${e.localizedMessage}")

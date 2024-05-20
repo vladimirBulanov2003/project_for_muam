@@ -15,6 +15,11 @@ fun Application.configurePointRouting() {
             deletePointController.deletePoint()
         }
 
+        get("/show_points"){
+            val showPointsController = PointController(call)
+            showPointsController.showPoint()
+
+        }
 
     }
 }

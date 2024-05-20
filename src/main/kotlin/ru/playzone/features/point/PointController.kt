@@ -39,6 +39,10 @@ class PointController(private val call: ApplicationCall) {
 
     }
 
+   suspend fun showPoint(){
+       call.respond(Points.fetchPoints())
+   }
+
 
 
 }
